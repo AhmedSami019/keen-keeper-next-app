@@ -5,6 +5,15 @@ const nextConfig = {
   partialPrefetching: true,
   reactCompiler: true,
   // devIndicators: false,
+  images: {
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "i.pravatar.cc",
+        pathname: "/**",
+      },
+    ],
+  },
   turbopack: {
     rules: {
       "*.css": {
