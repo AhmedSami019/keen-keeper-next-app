@@ -12,9 +12,9 @@ const Navbar = () => {
 
     // nav links
     const links = <>
-    <li><Link href={'/'}  className={pathName == "/"?  "btn btn-primary" : 'btn'}><RiHome2Line size={23} />Home</Link></li>
-    <li><Link href={'/'}  className={pathName == "/timeline" ?  "btn btn-primary" : 'btn'}><RiTimeLine size={23} />Timeline</Link></li>
-    <li><Link href={'/'}  className={pathName == "/stats" ?  "btn btn-primary" : 'btn'}><TfiStatsUp size={23} />Stats</Link></li>
+    <li><Link href={'/'}  className={pathName == "/"?  "btn btn-primary btn-sm" : 'btn btn-sm'}><RiHome2Line size={16} />Home</Link></li>
+    <li><Link href={'/'}  className={pathName == "/timeline" ?  "btn btn-primary btn-sm" : 'btn btn-sm'}><RiTimeLine size={16} />Timeline</Link></li>
+    <li><Link href={'/'}  className={pathName == "/stats" ?  "btn btn-primary btn-sm" : 'btn btn-sm'}><TfiStatsUp size={16} />Stats</Link></li>
     </>
 
   return (
