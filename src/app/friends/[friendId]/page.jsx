@@ -3,13 +3,16 @@ import { BsChatLeftText } from "react-icons/bs";
 import { FiArchive, FiVideo } from "react-icons/fi";
 import { LuPhoneCall } from "react-icons/lu";
 import { RiDeleteBin6Line, RiNotificationSnoozeLine } from "react-icons/ri";
+import QuickCheckIn from "./QuickCheckIn";
 
 const FriendDetailsPage = async ({ params }) => {
   const { friendId } = await params;
+
+  // load data
   const res = await fetch("http://localhost:3000/friends.json");
   const friends = await res.json();
   const friend = friends.find((frd) => frd.id == friendId);
-  console.log(friend);
+  
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 gap-5 mx-3 lg:mx-30 my-10">
       <section className="grid grid-rows-2 gap-5">
@@ -76,11 +79,11 @@ const FriendDetailsPage = async ({ params }) => {
         <div className="grid grid-cols-3 gap-5 w-full">
           <div className="shadow rounded-xl bg-white p-10 text-center my-auto">
             <h4 className="text-2xl font-bold">40</h4>
-            <p className="text-gray-500">Next Due</p>
+            <p className="text-gray-500">Days Since Contact</p>
           </div>
           <div className="shadow rounded-xl bg-white p-10 text-center my-auto">
             <h4 className="text-2xl font-bold">40</h4>
-            <p className="text-gray-500">Next Due</p>
+            <p className="text-gray-500">Goal (in days)</p>
           </div>
           <div className="shadow rounded-xl bg-white p-10 text-center my-auto">
             <h4 className="text-2xl font-bold">40</h4>
@@ -98,22 +101,8 @@ const FriendDetailsPage = async ({ params }) => {
             </p>
           </div>
         </div>
-        <div className="bg-white shadow rounded-2xl p-5 space-y-5">
-          <h4 className="text-xl">Quick Check-in</h4>
-          <div className="grid grid-cols-3 gap-5 ">
-            <div className="bg-base-200 p-5 space-y-2 rounded-2xl shadow">
-                <LuPhoneCall size={27} className="mx-auto" />
-                <p className="text-center font-semibold">Call</p>
-            </div>
-            <div className="bg-base-200 p-5 space-y-2 rounded-2xl shadow">
-                <BsChatLeftText size={27} className="mx-auto" />
-                <p className="text-center font-semibold">TExt</p>
-            </div>
-            <div className="bg-base-200 p-5 space-y-2 rounded-2xl shadow">
-                <FiVideo size={27} className="mx-auto" />
-                <p className="text-center font-semibold">Call</p>
-            </div>
-          </div>
+        <div>
+          <QuickCheckIn friend={friend}></QuickCheckIn>
         </div>
       </section>
     </div>

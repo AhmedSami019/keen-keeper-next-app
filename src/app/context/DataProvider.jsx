@@ -5,15 +5,22 @@ import DataContext from './DataContext';
 
 const DataProvider = ({children}) => {
 
-    const [meetData, setMeetData] = useState([
-        {
-            name: "sami",
-            roll : 34
+    const [meetData, setMeetData] = useState([]) 
+
+    const handleTimelineEntry = (friend, type)=> {
+        const newMeetData = {
+            id : crypto.randomUUID(), 
+            friendId: friend.id,
+            friendName : friend.name,
+            type,
+            date : new Date().toISOString()
         }
-    ]) 
+        setMeetData([newMeetData, ...meetData])
+    }
     const data = {
         meetData,
-        setMeetData
+        setMeetData,
+        handleTimelineEntry
     }
     return (
         <DataContext value={data}>

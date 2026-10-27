@@ -3,6 +3,7 @@ import "./globals.css";
 import Navbar from "./Components/Navbar";
 import Footer from "./Components/Footer";
 import DataProvider from "./context/DataProvider";
+import ToastProvider from "./Components/ToastProvider";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -32,6 +33,7 @@ export default function RootLayout({ children }) {
           <section className="min-h-screen">{children}</section>
           <Footer></Footer>
         </DataProvider>
+        <ToastProvider></ToastProvider>
       </body>
     </html>
   );
