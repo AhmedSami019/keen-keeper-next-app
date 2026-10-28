@@ -78,15 +78,15 @@ const FriendDetailsPage = async ({ params }) => {
       <section className="grid grid-rows-3 gap-5">
         <div className="grid grid-cols-3 gap-5 w-full">
           <div className="shadow rounded-xl bg-white p-10 text-center my-auto">
-            <h4 className="text-2xl font-bold">40</h4>
+            <h4 className="text-2xl font-bold">{friend.days_since_contact}</h4>
             <p className="text-gray-500">Days Since Contact</p>
           </div>
           <div className="shadow rounded-xl bg-white p-10 text-center my-auto">
-            <h4 className="text-2xl font-bold">40</h4>
+            <h4 className="text-2xl font-bold">{friend.goal}</h4>
             <p className="text-gray-500">Goal (in days)</p>
           </div>
           <div className="shadow rounded-xl bg-white p-10 text-center my-auto">
-            <h4 className="text-2xl font-bold">40</h4>
+            <h4 className="text-2xl font-bold">{friend.next_due_date}</h4>
             <p className="text-gray-500">Next Due</p>
           </div>
         </div>
@@ -97,7 +97,7 @@ const FriendDetailsPage = async ({ params }) => {
           </div>
           <div>
             <p>
-              Connect every <span className="font-bold">30 days</span>
+              Connect every <span className="font-bold">{friend.days_since_contact} days</span>
             </p>
           </div>
         </div>

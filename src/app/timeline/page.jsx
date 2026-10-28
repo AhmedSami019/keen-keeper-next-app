@@ -8,7 +8,6 @@ import { BsChatSquareTextFill } from "react-icons/bs";
 
 const TimelinePage = () => {
   const { meetData } = useContext(DataContext);
-  console.log(meetData);
   return (
     <div className="mx-2 md:mx-30 my-10 space-y-3">
       <h2 className="text-5xl font-bold">Timeline</h2>
